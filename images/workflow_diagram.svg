@@ -1,0 +1,137 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#5f6368"/>
+    </marker>
+  </defs>
+  
+  <!-- PostgreSQL Database -->
+  <g transform="translate(50, 150)">
+    <rect width="180" height="120" rx="12" fill="#ffffff" filter="url(#shadow)" stroke="#336791" stroke-width="2"/>
+    <!-- PostgreSQL Elephant Logo -->
+    <g transform="translate(90, 30) scale(0.8)">
+      <ellipse cx="0" cy="0" rx="25" ry="28" fill="#336791"/>
+      <ellipse cx="-8" cy="-5" rx="4" ry="4" fill="#ffffff"/>
+      <path d="M 15,-10 Q 25,-15 20,-25" stroke="#336791" stroke-width="3" fill="none"/>
+    </g>
+    <text x="90" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#202124">PostgreSQL</text>
+    <text x="90" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5f6368">DVD Rental OLTP</text>
+  </g>
+  
+  <!-- Python Scripts -->
+  <g transform="translate(290, 150)">
+    <rect width="160" height="120" rx="12" fill="#ffffff" filter="url(#shadow)" stroke="#3776ab" stroke-width="2"/>
+    <!-- Python Logo -->
+    <g transform="translate(80, 35)">
+      <path d="M -15,-15 L 15,-15 L 15,0 L 10,0 L 10,-10 L -10,-10 L -10,10 L -15,10 Z" fill="#3776ab"/>
+      <path d="M 15,15 L -15,15 L -15,0 L -10,0 L -10,10 L 10,10 L 10,-10 L 15,-10 Z" fill="#ffd343"/>
+      <circle cx="-8" cy="-8" r="2" fill="#ffffff"/>
+      <circle cx="8" cy="8" r="2" fill="#ffffff"/>
+    </g>
+    <text x="80" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#202124">Python</text>
+    <text x="80" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5f6368">Extraction Scripts</text>
+  </g>
+  
+  <!-- GCS Bucket -->
+  <g transform="translate(510, 150)">
+    <rect width="160" height="120" rx="12" fill="#ffffff" filter="url(#shadow)" stroke="#4285f4" stroke-width="2"/>
+    <!-- GCS Bucket Icon -->
+    <g transform="translate(80, 40)">
+      <path d="M -20,-10 L 0,-20 L 20,-10 L 20,10 L 0,20 L -20,10 Z" fill="#4285f4" opacity="0.9"/>
+      <path d="M -20,-10 L 0,0 L 20,-10" fill="#1a73e8"/>
+      <path d="M 0,0 L 0,20" stroke="#1a73e8" stroke-width="2" fill="none"/>
+    </g>
+    <text x="80" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#202124">Cloud Storage</text>
+    <text x="80" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5f6368">Data Lake</text>
+  </g>
+  
+  <!-- BigQuery -->
+  <g transform="translate(730, 150)">
+    <rect width="160" height="120" rx="12" fill="#ffffff" filter="url(#shadow)" stroke="#4285f4" stroke-width="2"/>
+    <!-- BigQuery Icon -->
+    <g transform="translate(80, 40)">
+      <rect x="-18" y="-18" width="36" height="36" rx="4" fill="#4285f4"/>
+      <path d="M -10,-10 L 10,-10 L 10,10 L -10,10 Z" fill="#ffffff"/>
+      <rect x="-6" y="-6" width="4" height="12" fill="#4285f4"/>
+      <rect x="2" y="-6" width="4" height="12" fill="#4285f4"/>
+    </g>
+    <text x="80" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#202124">BigQuery</text>
+    <text x="80" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5f6368">Data Warehouse</text>
+  </g>
+  
+  <!-- dbt Transformation Layer -->
+  <g transform="translate(950, 50)">
+    <rect width="220" height="320" rx="12" fill="#ffffff" filter="url(#shadow)" stroke="#ff6849" stroke-width="2"/>
+    <!-- dbt Logo -->
+    <g transform="translate(110, 35)">
+      <circle cx="0" cy="0" r="20" fill="#ff6849"/>
+      <text x="0" y="7" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff">dbt</text>
+    </g>
+    <text x="110" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#202124">dbt Transformation</text>
+    
+    <!-- Staging Models -->
+    <g transform="translate(20, 100)">
+      <rect width="180" height="50" rx="8" fill="#fff4f2" stroke="#ff6849" stroke-width="1.5"/>
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#202124">Staging Models</text>
+    </g>
+    
+    <!-- Intermediate Models -->
+    <g transform="translate(20, 170)">
+      <rect width="180" height="50" rx="8" fill="#fff4f2" stroke="#ff6849" stroke-width="1.5"/>
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#202124">Intermediate Models</text>
+    </g>
+    
+    <!-- Mart Models -->
+    <g transform="translate(20, 240)">
+      <rect width="180" height="50" rx="8" fill="#fff4f2" stroke="#ff6849" stroke-width="1.5"/>
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#202124">Mart Models</text>
+    </g>
+  </g>
+  
+  <!-- Looker Studio -->
+  <g transform="translate(950, 430)">
+    <rect width="220" height="120" rx="12" fill="#ffffff" filter="url(#shadow)" stroke="#4285f4" stroke-width="2"/>
+    <!-- Looker Studio Icon -->
+    <g transform="translate(110, 40)">
+      <rect x="-20" y="-15" width="40" height="30" rx="3" fill="#4285f4"/>
+      <rect x="-15" y="-10" width="10" height="5" fill="#ffffff"/>
+      <rect x="-15" y="-2" width="30" height="5" fill="#ffffff"/>
+      <rect x="-15" y="6" width="20" height="5" fill="#ffffff"/>
+    </g>
+    <text x="110" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#202124">Looker Studio</text>
+    <text x="110" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5f6368">Dashboard</text>
+  </g>
+  
+  <!-- Arrows -->
+  <!-- PostgreSQL to Python -->
+  <line x1="230" y1="210" x2="290" y2="210" stroke="#5f6368" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Python to GCS -->
+  <line x1="450" y1="210" x2="510" y2="210" stroke="#5f6368" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- GCS to BigQuery -->
+  <line x1="670" y1="210" x2="730" y2="210" stroke="#5f6368" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- BigQuery to dbt -->
+  <line x1="890" y1="210" x2="950" y2="210" stroke="#5f6368" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- dbt to Looker Studio -->
+  <line x1="1060" y1="370" x2="1060" y2="430" stroke="#5f6368" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Title -->
+  <text x="600" y="650" font-family="Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#202124">Modern Data Engineering Workflow</text>
+</svg>
