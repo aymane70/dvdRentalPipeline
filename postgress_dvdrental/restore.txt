@@ -1,0 +1,5 @@
+after running the docker-compose run this :
+
+
+
+pg_restore -U postgres -d dvdrental /docker-entrypoint-initdb.d/dvdrental.tar

@@ -1,0 +1,31 @@
+[0m13:15:23.860275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd1e124d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd1d07afe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd1d07a020>]}
+
+
+============================== 13:15:23.862614 | 52eea1ca-0393-4e51-b44e-ccb353059ab4 ==============================
+[0m13:15:23.862614 [info ] [MainThread]: Running with dbt=1.11.0-rc2
+[0m13:15:23.863268 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/aymane/.dbt', 'introspect': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'no_print': 'None', 'warn_error': 'None', 'quiet': 'False', 'target_path': 'None', 'version_check': 'True', 'log_cache_events': 'False', 'use_colors': 'True', 'fail_fast': 'False', 'printer_width': '80', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'static_parser': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init dvdrental_dbt', 'log_path': 'logs'}
+[0m13:15:23.870656 [info ] [MainThread]: Creating dbt configuration folder at /home/aymane/.dbt
+[0m13:15:23.872227 [debug] [MainThread]: Starter project path: /home/aymane/Documents/test-project/venv_dbt/lib64/python3.10/site-packages/dbt/include/starter_project
+[0m13:15:23.874764 [info ] [MainThread]: 
+Your new dbt project "dvdrental_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:15:23.875330 [info ] [MainThread]: Setting up your profile.
+[0m13:22:26.154209 [info ] [MainThread]: Profile dvdrental_dbt written to /home/aymane/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m13:22:26.155227 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 422.35013, "process_in_blocks": "0", "process_kernel_time": 0.150697, "process_mem_max_rss": "339524", "process_out_blocks": "208", "process_user_time": 3.446566}
+[0m13:22:26.155922 [debug] [MainThread]: Command `dbt init` succeeded at 13:22:26.155803 after 422.35 seconds
+[0m13:22:26.156425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd1e124d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdcf306db40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdcf306eb60>]}
+[0m13:22:26.156909 [debug] [MainThread]: Flushing usage events
+[0m13:22:27.380853 [debug] [MainThread]: An error was encountered while trying to flush usage events

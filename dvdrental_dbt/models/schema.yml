@@ -1,0 +1,213 @@
+version: 2
+
+models:
+
+  # ======================
+  # 🧱 STAGING MODELS
+  # ======================
+  - name: stg_customer
+    description: "Staging table for customer data."
+    columns:
+      - name: customer_id
+        description: "Primary key for each customer."
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Customer email address."
+        tests:
+          - not_null
+      - name: active
+        description: "Customer active flag."
+        tests:
+          - accepted_values:
+              values: [true, false]
+
+  - name: stg_film
+    description: "Staging table for film data."
+    columns:
+      - name: film_id
+        description: "Primary key for each film."
+        tests:
+          - unique
+          - not_null
+      - name: title
+        description: "Film title."
+        tests:
+          - not_null
+      - name: rating
+        description: "Film rating (G, PG, PG-13, R, NC-17)."
+        tests:
+          - accepted_values:
+              values: ['G', 'PG', 'PG-13', 'R', 'NC-17']
+
+  - name: stg_store
+    description: "Staging table for store data."
+    columns:
+      - name: store_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_payment
+    description: "Staging table for payment data."
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+          - not_null
+      - name: amount
+        description: "Payment amount, must be positive."
+        tests:
+          - not_null
+
+  - name: stg_rental
+    description: "Staging table for rental data."
+    columns:
+      - name: rental_id
+        tests:
+          - unique
+          - not_null
+      - name: rental_date
+        tests:
+          - not_null
+      - name: return_date
+        tests:
+          - not_null
+
+  - name: stg_inventory
+    description: "Staging table for inventory data."
+    columns:
+      - name: inventory_id
+        tests:
+          - unique
+          - not_null
+      - name: film_id
+        tests:
+          - relationships:
+              to: ref('stg_film')
+              field: film_id
+
+  - name: stg_film_category
+    description: "Staging table for film category mapping."
+    columns:
+      - name: film_id
+        tests:
+          - relationships:
+              to: ref('stg_film')
+              field: film_id
+      - name: category_id
+        tests:
+          - not_null
+
+
+  # ======================
+  # ⚙️ INTERMEDIATE MODELS
+  # ======================
+
+  - name: int_film_details
+    description: "Film data joined with category and inventory info."
+    columns:
+      - name: film_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_film')
+              field: film_id
+      - name: category_id
+        tests:
+          - not_null
+
+  - name: int_rental_details
+    description: "Combined rental, customer, payment, store, and inventory data."
+    columns:
+      - name: rental_id
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customer')
+              field: customer_id
+
+      - name: film_id
+        tests:
+          - relationships:
+              to: ref('stg_film')
+              field: film_id
+      - name: store_id
+        tests:
+          - relationships:
+              to: ref('stg_store')
+              field: store_id
+
+  - name: int_sales_enriched
+    description: "Rental data enriched with film and payment details."
+    columns:
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customer')
+              field: customer_id
+      - name: film_id
+        tests:
+          - relationships:
+              to: ref('stg_film')
+              field: film_id
+      - name: store_id
+        tests:
+          - relationships:
+              to: ref('stg_store')
+              field: store_id
+
+
+
+  # ======================
+  # 📊 MART MODELS (Analytics)
+  # ======================
+
+  - name: mart_revenue_by_store
+    description: "Total revenue aggregated by store."
+    columns:
+      - name: store_id
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+
+  - name: mart_top_customers
+    description: "Top customers by spending."
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: total_spent
+        tests:
+          - not_null
+
+
+  - name: mart_top_films
+    description: "Top films by revenue and rental count."
+    columns:
+      - name: film_id
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+
+
+
+  - name: mart_category_performance
+    description: "Performance of each film category."
+    columns:
+      - name: category_id
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
