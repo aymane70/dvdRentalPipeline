@@ -4,19 +4,10 @@ This project implements a full modern data analytics pipeline using the classic 
 It simulates a real-world data engineering workflow—from an OLTP database to a fully modeled warehouse and business dashboard.
 
 
-```mermaid
-flowchart LR
-    A["Postgres DVD Rental\nSource OLTP Database"]
-    B["Extract & Load\n(db t staging)"]
-    C["Transform\n(db t models: fact + dim)"]
-    D["Analytics Warehouse\n(Curated Layer)"]
-    E["BI Tools\n(Power BI / Looker / Metabase)"]
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-```
+
+![Architecture Diagram](images/Gemini_Generated_Image_6ufxyq6ufxyq6ufx.png)
+
 
 
 
